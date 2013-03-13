@@ -80,13 +80,10 @@ if(in_array($_FILES['file']['type'],$mimes)){
           }
         }
 
-
-
       }
     }
 
     echo 'Data successfully added.';
-
     fclose($handle);
     mysql_close($con);
 }

@@ -13,30 +13,24 @@
 		$(document).ready(function(){
 			$('#upload').submit(function() {
 				
-				if($('#file').val().length > 0) {
-					
-				}else{
-					$("#msg").text("Invalid file!").show().fadeOut(1000);
+				if(!$('#file').val().length > 0) {
+					$("#msg").text("Please select a file!").show().fadeOut(2000);
 					return false;
 				}
 			});
-				
-		
 		});
 	})(jQuery);
 	</script>
 </head>
 <body>
 	<div id = "form-div">
-		<span id = "msg"></span>
 		<form id="upload" method="post" enctype="multipart/form-data" action = "process.php">
 			<label for="file">Filename:</label>
-			<input type="file" name="file" id="file" /> 
+			<input type="file" name="file" id="file" /><span id = "msg"></span> 
 			<br>
 			<input type = "hidden" name = "" />
 			<input type="submit" name="submit" value="Upload file" id = "submit" />
 		</form>
-
 	</div>
 </body>
 </html>
